@@ -13,6 +13,7 @@ func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		// We generate a random number between 0 and 9 (inclusive), so that we can decide whether to behave properly (half of the time), or simulate error conditions.
 		randomNumber := rand.Intn(10)
+		fmt.Printf("random number generated: %d\n", randomNumber)
 		switch randomNumber {
 		// 50% of the time, we just report the weather. 30% nice, 20% less so.
 		case 0, 1, 2:
